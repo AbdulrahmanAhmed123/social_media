@@ -1,53 +1,51 @@
-📊 Social Media Data Analysis & Outlier Detection
-مرحباً بك في هذا المشروع! هنا نقوم بعمل Data Cleaning و Exploratory Data Analysis (EDA) على مجموعة بيانات تخص منصات التواصل الاجتماعي (Social Media Dataset)، مع التركيز بشكل خاص على اكتشاف القيم الشاذة (Outliers Detection).
+# 📊 Social Media Data Analysis & Outlier Detection
 
-🚀 Project Overview (نظرة عامة على المشروع)
+مرحباً بك في هذا المشروع! هنا نقوم بعمل **Data Cleaning** و **Exploratory Data Analysis (EDA)** على مجموعة بيانات تخص منصات التواصل الاجتماعي (Social Media Dataset)، مع التركيز بشكل خاص على اكتشاف القيم الشاذة (**Outliers Detection**).
+
+---
+
+## 🚀 Project Overview (نظرة عامة على المشروع)
+
 الهدف من هذا الـ Notebook هو فهم سلوك البيانات وتنظيفها وتجهيزها للتحليل. يحتوي المشروع على:
+*   **Data Exploration**: استكشاف حجم البيانات ونوعها (`shape`, `dtypes`, `describe`).
+*   **Handling Missing Values**: التعامل مع القيم المفقودة في البيانات باستخدام طرق الـ Imputation.
+*   **Outliers Detection**: بناء دالات (Functions) مخصصة لاكتشاف القيم الشاذة باستخدام طريقتين مختلفتين:
+    1.  **Z-Score Method**.
+    2.  **IQR (Interquartile Range) Method**.
+*   **Data Visualization**: رسم بياني لاستكشاف توزيع البيانات والتفاعل على المنصات المختلفة.
 
-Data Exploration: استكشاف حجم البيانات ونوعها (shape, dtypes, describe).
+---
 
-Handling Missing Values: التعامل مع القيم المفقودة في البيانات باستخدام طرق الـ Imputation.
+## 🛠️ Tech Stack & Libraries (التقنيات المستخدمة)
 
-Outliers Detection: بناء دالات (Functions) مخصصة لاكتشاف القيم الشاذة باستخدام طريقتين مختلفتين:
+تم بناء هذا المشروع باستخدام **Python** والاعتماد على المكتبات التالية:
+*   `pandas`: لملء، تنظيف، وتحليل البيانات المستطيلة.
+*   `numpy`: للعمليات الحسابية وحساب الـ Z-Score.
+*   `matplotlib` & `seaborn`: لعمل الـ Data Visualization ورسم الـ Boxplots والـ Countplots.
 
-Z-Score Method.
+---
 
-IQR (Interquartile Range) Method.
+## 🔍 Key Steps in the Notebook (الخطوات الرئيسية)
 
-Data Visualization: رسم بياني لاستكشاف توزيع البيانات والتفاعل على المنصات المختلفة.
+### 1. Data Loading & Inspection (تحميل ومعاينة البيانات)
+قراءة ملف الـ CSV واستعراض العينات والتأكد من أنواع البيانات الأساسية مثل التاريخ (`date`) وأرقام التفاعل (`likes`, `shares`, `comments`, `views`).
 
-🛠️ Tech Stack & Libraries (التقنيات المستخدمة)
-تم بناء هذا المشروع باستخدام Python والاعتماد على المكتبات التالية:
-
-pandas: لملء، تنظيف، وتحليل البيانات المستطيلة.
-
-numpy: للعمليات الحسابية وحساب الـ Z-Score.
-
-matplotlib & seaborn: لعمل الـ Data Visualization ورسم الـ Boxplots والـ Countplots.
-
-🔍 Key Steps in the Notebook (الخطوات الرئيسية)
-1. Data Loading & Inspection (تحميل ومعاينة البيانات)
-قراءة ملف الـ CSV واستعراض العينات والتأكد من أنواع البيانات الأساسية مثل التاريخ (date) وأرقام التفاعل (likes, shares, comments, views).
-
-2. Outliers Detection Functions (دوال اكتشاف القيم الشاذة)
+### 2. Outliers Detection Functions (دوال اكتشاف القيم الشاذة)
 قمت بكتابة كود مخصص (Custom Functions) لتحديد الـ Outliers:
+*   دالة `detect_outliers`: تعتمد على **Z-Score** (أكثر من 3 انحرافات معيارية من المتوسط).
+*   دالة `detect_outliers_iqr`: تعتمد على **IQR** لتحديد الحدود العليا والدنيا للبيانات الرقمية في أعمدة معينة وتفادي الأعمدة النصية بشكل ذكي.
 
-دالة detect_outliers: تعتمد على Z-Score (أكثر من 3 انحرافات معيارية من المتوسط).
+### 3. Handling Missing Values (معالجة البيانات المفقودة)
+وجدنا بعض القيم المفقودة في أعمدة التفاعل، وتم التعامل معها بنجاح باستخدام طريقة الـ Forward Fill (`fillna(method='ffill')`) للتأكد من عدم وجود قيم فارغة (`nulls`).
 
-دالة detect_outliers_iqr: تعتمد على IQR لتحديد الحدود العليا والدنيا للبيانات الرقمية في أعمدة معينة وتفادي الأعمدة النصية بشكل ذكي.
+### 4. Data Visualization (التمثيل البياني)
+*   استخدام الـ **Boxplot** لمعاينة التوزيع والـ Outliers بصرياً.
+*   عمل **Countplot** مخصص لمقارنة المنصات المختلفة (`platform`) وربطها بنسب التفاعل والتعليقات والـ Likes.
 
-3. Handling Missing Values (معالجة البيانات المفقودة)
-وجدنا بعض القيم المفقودة في أعمدة التفاعل، وتم التعامل معها بنجاح باستخدام طريقة الـ Forward Fill (fillna(method='ffill')) للتأكد من عدم وجود قيم فارغة (nulls).
+---
 
-4. Data Visualization (التمثيل البياني)
-استخدام الـ Boxplot لمعاينة التوزيع والـ Outliers بصرياً.
-
-عمل Countplot مخصص لمقارنة المنصات المختلفة (platform) وربطها بنسب التفاعل والتعليقات والـ Likes.
-
-📈 Results (النتائج)
-بعد تشغيل دوال اكتشاف القيم الشاذة (IQR & Z-Score) على بيانات الـ views والـ shares والـ comments، تبيّن أن البيانات نظيفة وخالية من الأخطاء أو القيم الشاذة المؤثرة (Empty DataFrame للـ Outliers)، مما يجعلها جاهزة تماماً للخطوات القادمة في التحليل أو بناء النماذج
-
-.
+## 📈 Results (النتائج)
+بعد تشغيل دوال اكتشاف القيم الشاذة (IQR & Z-Score) على بيانات الـ views والـ shares والـ comments، تبيّن أن البيانات **نظيفة وخالية من الأخطاء أو القيم الشاذة المؤثرة** (Empty DataFrame للـ Outliers)، مما يجعلها جاهزة تماماً للخطوات القادمة في التحليل أو بناء النماذج.
 [social.pdf](https://github.com/user-attachments/files/16042246/social.pdf)
 
 
