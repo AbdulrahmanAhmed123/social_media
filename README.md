@@ -45,7 +45,9 @@ matplotlib & seaborn: لعمل الـ Data Visualization ورسم الـ Boxplot
 عمل Countplot مخصص لمقارنة المنصات المختلفة (platform) وربطها بنسب التفاعل والتعليقات والـ Likes.
 
 📈 Results (النتائج)
-بعد تشغيل دوال اكتشاف القيم الشاذة (IQR & Z-Score) على بيانات الـ views والـ shares والـ comments، تبيّن أن البيانات نظيفة وخالية من الأخطاء أو القيم الشاذة المؤثرة (Empty DataFrame للـ Outliers)، مما يجعلها جاهزة تماماً للخطوات القادمة في التحليل أو بناء النماذج.
+بعد تشغيل دوال اكتشاف القيم الشاذة (IQR & Z-Score) على بيانات الـ views والـ shares والـ comments، تبيّن أن البيانات نظيفة وخالية من الأخطاء أو القيم الشاذة المؤثرة (Empty DataFrame للـ Outliers)، مما يجعلها جاهزة تماماً للخطوات القادمة في التحليل أو بناء النماذج
+
+.
 [social.pdf](https://github.com/user-attachments/files/16042246/social.pdf)
 
 
